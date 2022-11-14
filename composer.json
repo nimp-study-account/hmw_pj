@@ -1,0 +1,22 @@
+{
+    "name": "nimp/hmw",
+    "description": "Description ...",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nimp\\Hmw\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yehor Konopka"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog": "3.*",
+        "ufo-cms/colored_cli": " *",
+        "ext-readline": "*"
+    }
+}
