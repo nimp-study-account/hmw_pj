@@ -10,3 +10,18 @@ services:
     volumes:
       - ./:/srv/hmw_pj
       - ./docker/configs/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    links:
+      - db_mysql
+
+  db_mysql:
+    image: mysql:latest
+    container_name: base_mysql
+    ports:
+      - 13333:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: hmw_db
+      MYSQL_USER: nimp
+      MYSQL_PASSWORD: nimp3636
+    volumes:
+      - ./docker/databases/mysql_dump:/docker-entrypoint-initdb.d

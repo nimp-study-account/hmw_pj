@@ -17,6 +17,6 @@
     "require": {
         "monolog/monolog": "3.*",
         "ufo-cms/colored_cli": " *",
-        "ext-readline": "*"
+        "ext-pdo": "*"
     }
 }
