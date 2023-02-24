@@ -17,6 +17,7 @@
     "require": {
         "monolog/monolog": "3.*",
         "ufo-cms/colored_cli": " *",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "hmw-pj/url-shortener": "dev-main"
     }
 }

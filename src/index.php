@@ -11,12 +11,12 @@ use Nimp\Hmw\core\CLI\Commands\UrlEncodeCommand;
 use Nimp\Hmw\Core\Helpers\SingletonLogger;
 use Nimp\Hmw\Shortener\FileRepository;
 use Nimp\Hmw\Shortener\Helpers\UrlValidator;
-use Nimp\Hmw\Shortener\UrlConvertor;
+//use Nimp\Hmw\Shortener\UrlConvertor;
 use Nimp\Hmw\Core\CLI\ConfigHandler;
 use Nimp\Hmw\core\CLI\Commands\HelpCommand;
 use Monolog\Handler\StreamHandler;
 use UfoCms\ColoredCli\CliColor;
-
+use HmwPj\UrlShortener\UrlConverter;
 
 $configs = require_once __DIR__ . '/../parameters/configs.php';
 $configHandler = ConfigHandler::getInstance()->addConfigs($configs);
@@ -33,10 +33,11 @@ $singletonLogger = SingletonLogger::getInstance($monolog);
 $fileRepository = new FileRepository($configHandler->get('dbFile'));
 $validator = new UrlValidator();
 
-$converter = new UrlConvertor($validator, $fileRepository, $configHandler->get('urlConverter.codeLength'));
+$converter = new UrlConverter($fileRepository,$validator, $configHandler->get('urlConverter.codeLength'));
 
-// echo $res = $converter->encode('http://site.com');
-//    echo $converter->decode($res);
+ echo $res = $converter->encode('http://site.com') . PHP_EOL;
+
+ die();
 
 $commandHandler->addCommand(new UrlEncodeCommand($converter));
 $commandHandler->addCommand(new UrlDecodeCommand($converter));

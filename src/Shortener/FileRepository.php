@@ -7,7 +7,7 @@ use Nimp\Hmw\Shortener\Interfaces\ICodeRepository;
 use Nimp\Hmw\Shortener\ValueObjects\UrlCodePair;
 
 
-class FileRepository implements ICodeRepository
+class FileRepository implements \HmwPj\UrlShortener\Interfaces\ICodeRepository
 {
     protected string $fileDb;
     protected array $db = [];
@@ -33,10 +33,10 @@ class FileRepository implements ICodeRepository
     }
 
     /**
-     * @param UrlCodePair $urlCodePair
+     * @param \HmwPj\UrlShortener\ValueObjects\UrlCodePair $urlCodePair
      * @return bool
      */
-    public function saveEntity(UrlCodePair $urlCodePair): bool
+    public function saveEntity(\HmwPj\UrlShortener\ValueObjects\UrlCodePair $urlCodePair): bool
     {
         $this->db[$urlCodePair->getCode()] = $urlCodePair->getUrl();
         return true;
