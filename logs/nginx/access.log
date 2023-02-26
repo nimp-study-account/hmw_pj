@@ -1,0 +1,2 @@
+172.19.0.1 - - [25/Feb/2023:21:20:29 +0000] "GET / HTTP/1.1" 200 21 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+172.19.0.1 - - [25/Feb/2023:21:20:29 +0000] "GET /favicon.ico HTTP/1.1" 200 21 "http://localhost:8888/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"

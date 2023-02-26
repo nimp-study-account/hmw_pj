@@ -25,3 +25,16 @@ services:
       MYSQL_PASSWORD: nimp3636
     volumes:
       - ./docker/databases/mysql_dump:/docker-entrypoint-initdb.d
+
+  nginx:
+    image: nginx:latest
+    container_name: hmw_nginx
+    ports:
+      - "8888:80"
+      - "443:443"
+    volumes:
+      - ./:/srv/hmw_pj
+      - ./docker/configs/nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    links:
+      - php-fpm
